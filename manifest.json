@@ -1,0 +1,27 @@
+{
+  "name": "summer-family-travel-guide",
+  "version": "1.0.0",
+  "description": "Chinese-first Codex Skill for summer family trips, graduation travel, live price verification, and itinerary lock-in.",
+  "entry": "SKILL.md",
+  "files": [
+    "SKILL.md",
+    "agents/openai.yaml",
+    "references/booking-lockin-workflow.md",
+    "references/price-verification-workflow.md",
+    "references/travel-guide-template.md",
+    "scripts/check_super_travel_skill.py",
+    "README.md",
+    "llms.txt",
+    "llms-full.txt",
+    "PROMPTS.md"
+  ],
+  "keywords": [
+    "codex-skill",
+    "travel",
+    "family-travel",
+    "china-travel",
+    "price-verification",
+    "booking-lockin",
+    "xiaohongshu"
+  ]
+}

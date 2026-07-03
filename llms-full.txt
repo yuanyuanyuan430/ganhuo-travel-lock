@@ -1,0 +1,79 @@
+# Summer Family Travel Guide
+
+Summer Family Travel Guide is a Chinese-first Codex Skill for turning travel ideas into executable, evidence-backed plans.
+
+It supports:
+
+- Practical Chinese travel guides for summer, parent-child trips, graduation trips, friends, couples, and content creators.
+- City and route recommendations with no more than 3 differentiated options when the destination is undecided.
+- Daily itinerary tables by area, keeping each day realistic and heat/rain-aware.
+- Popular attraction sorting: keep, skip, or backup.
+- Budget estimates separated from live verified prices.
+- Live verification workflows for tickets, opening hours, reservations, hotel prices, transport schedules, weather warnings, and cancellation policies.
+- Booking lock-in state: `已锁定`, `建议锁定`, `待确认`, `待核验`, `备选`, `不建议锁定`.
+- Xiaohongshu-style travel article structure.
+
+## Installation
+
+```bash
+mkdir -p ~/.codex/skills
+git clone https://github.com/yuanyuanyuan430/summer-family-travel-guide.git ~/.codex/skills/summer-family-travel-guide
+```
+
+## Default Prompt
+
+```text
+使用 $summer-family-travel-guide 实时核验票价、酒店和交通，并锁定一份中文旅行方案。
+```
+
+## Main Workflow
+
+1. Read `references/travel-guide-template.md` before drafting a guide.
+2. Read `references/booking-lockin-workflow.md` and `references/price-verification-workflow.md` for booking, price, hotel, transport, ticket, real-time, or lock-in requests.
+3. Ask at most 3 blocking questions when core information is missing.
+4. Default soft fields explicitly: medium budget, medium pace, no self-driving, domestic travel.
+5. Use live tools for volatile facts when the user asks for current prices, availability, schedules, opening hours, reservations, weather, or hotel policies.
+6. Cite source name, URL/app path, and query time.
+7. Maintain lock state as decisions converge.
+8. Stop before paid or irreversible actions.
+
+## Evidence Fields
+
+For live facts, capture:
+
+- `source`
+- `url_or_app_path`
+- `queried_at`
+- `basis`
+- `observed_value`
+- `confidence`
+- `next_action`
+
+## Safety Rules
+
+The skill can compare prices and policies, prepare decision tables, and help users reach a manual checkout decision.
+
+The skill must not:
+
+- Auto-submit orders.
+- Pay.
+- Store credentials, cookies, identity numbers, payment details, SMS codes, or tokens.
+- Bypass captchas, queues, anti-bot checks, rate limits, login walls, or platform terms.
+- Run high-frequency scraping, ticket sniping, resale/scalping workflows, or stealth automation.
+- Claim live price, stock, seat, room, or reservation availability without a current source.
+
+## Files
+
+- `SKILL.md`: Triggering metadata, main workflow, boundaries, and references.
+- `agents/openai.yaml`: UI metadata for Codex.
+- `references/travel-guide-template.md`: Output template, city tiers, child-age rules, summer risks, Xiaohongshu angle.
+- `references/booking-lockin-workflow.md`: Lock state, booking readiness, decision log, and safety boundary.
+- `references/price-verification-workflow.md`: Source priority, evidence fields, normalization, comparison language.
+- `scripts/check_super_travel_skill.py`: Minimal regression self-check for required contract text.
+
+## Validation
+
+```bash
+python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py .
+python3 scripts/check_super_travel_skill.py
+```

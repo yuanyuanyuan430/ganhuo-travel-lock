@@ -1,0 +1,36 @@
+# Summer Family Travel Guide
+
+Chinese-first Codex Skill for practical summer travel, family trips, graduation trips, live price verification, hotel/transport/ticket comparison, and conversational itinerary lock-in.
+
+Repository: https://github.com/yuanyuanyuan430/summer-family-travel-guide
+
+Core files:
+
+- [Skill instructions](SKILL.md)
+- [Booking lock-in workflow](references/booking-lockin-workflow.md)
+- [Price verification workflow](references/price-verification-workflow.md)
+- [Travel guide template](references/travel-guide-template.md)
+- [Self-check script](scripts/check_super_travel_skill.py)
+
+Use this skill when the user asks in Chinese about:
+
+- 旅游攻略
+- 暑假去哪
+- 带娃旅游 / 亲子游
+- 毕业旅行
+- 城市推荐
+- 热门地点避坑
+- 小红书旅行攻略
+- 订票 / 查票价 / 比价
+- 酒店价格
+- 高铁/机票班次
+- 门票预约
+- 锁定行程
+
+Important boundaries:
+
+- Do not fabricate real-time prices, opening hours, availability, schedules, reservation slots, or queue times.
+- Do not auto-submit orders or payments.
+- Do not store credentials, identity documents, payment details, cookies, or verification codes.
+- Do not bypass captchas, queues, anti-bot systems, login walls, or rate limits.
+- Stop before paid or irreversible actions and require explicit user confirmation.

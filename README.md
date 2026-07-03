@@ -1,0 +1,95 @@
+# Summer Family Travel Guide
+
+![Codex Skill](https://img.shields.io/badge/Codex-Skill-111827)
+![Chinese First](https://img.shields.io/badge/Chinese--first-旅行攻略-16a34a)
+![Safety](https://img.shields.io/badge/booking-human%20confirmed-f97316)
+
+中文优先的旅行锁定与比价攻略 Skill：让 Codex 在对话里帮你把暑假亲子游、毕业旅行、城市路线、门票、酒店、交通和预算一步步收敛成可执行方案。
+
+它不是抢票器，也不是自动付款机器人。它做的是：实时核验、证据留痕、方案取舍、风险提示、锁定版本和人工确认清单。
+
+## 能做什么
+
+| 场景 | 产出 |
+|---|---|
+| 暑假去哪 | 3 个差异化城市/路线方案，不撒网式推荐 |
+| 带娃亲子游 | 年龄适配、午休、室内备选、天气和安全风险 |
+| 毕业旅行 | 低预算、拍照、美食、夜间安全和交通收口 |
+| 查票价/比价 | 来源、查询时间、查询条件、可信度和下一步 |
+| 酒店锁定 | 同日期、房型、早餐、取消政策、亲子适配对比 |
+| 高铁/机票/门票 | 当前来源核验、不可编造班次/库存/开放时间 |
+| 锁定行程 | `已锁定 / 建议锁定 / 待确认 / 待核验 / 备选` 状态表 |
+| 小红书攻略 | 标题、封面信息、正文结构和避坑清单 |
+
+## 安装
+
+```bash
+mkdir -p ~/.codex/skills
+git clone https://github.com/yuanyuanyuan430/summer-family-travel-guide.git ~/.codex/skills/summer-family-travel-guide
+```
+
+重启 Codex 后，使用：
+
+```text
+使用 $summer-family-travel-guide 实时核验票价、酒店和交通，并锁定一份中文旅行方案。
+```
+
+## 示例提示
+
+```text
+暑假从上海出发，带 6 岁孩子，3 天 2 晚，人均 3000，帮我推荐并锁定一个方案。
+```
+
+```text
+帮我查 2026-07-20 上海迪士尼 2 大 1 小门票、预约规则、营业时间，给出处和查询时间。
+```
+
+```text
+毕业旅行 4 个人，预算低，想拍照和吃东西，成都重庆西安选哪个？最后给我锁定版。
+```
+
+```text
+给我写一篇青岛亲子游小红书攻略，要热门地点排序、预算、避坑和出发前核验清单。
+```
+
+## 安全边界
+
+- 不编造实时票价、库存、开放时间、预约名额、班次、排队时间。
+- 不自动提交订单、不支付、不保存账号密码、验证码、身份证、支付信息、cookies。
+- 不绕过验证码、排队系统、平台限流、登录墙、反爬机制。
+- 不做高频抓价、抢票、黄牛、转售或隐身自动化。
+- 任何付费或不可逆动作，都停在用户亲自确认之前。
+
+## 文件结构
+
+```text
+.
+├── SKILL.md
+├── agents/openai.yaml
+├── references/
+│   ├── booking-lockin-workflow.md
+│   ├── price-verification-workflow.md
+│   └── travel-guide-template.md
+├── scripts/check_super_travel_skill.py
+├── llms.txt
+├── llms-full.txt
+└── PROMPTS.md
+```
+
+## 验证
+
+```bash
+python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py .
+python3 scripts/check_super_travel_skill.py
+```
+
+预期输出：
+
+```text
+Skill is valid!
+super travel skill self-check ok
+```
+
+## 设计取舍
+
+这版把“订票爬价格”定义为低频、可追溯、公开来源的核验流程，而不是把平台 UI 自动化做成抢票系统。这样更适合日常旅行决策，也更安全、可维护。
