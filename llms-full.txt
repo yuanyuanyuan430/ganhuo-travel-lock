@@ -1,6 +1,6 @@
-# Summer Family Travel Guide
+# Ganhuo Travel Lock
 
-Summer Family Travel Guide is a Chinese-first Codex Skill for turning travel ideas into executable, evidence-backed plans.
+Ganhuo Travel Lock is a Chinese-first Codex Skill for turning travel ideas into executable, evidence-backed plans.
 
 It supports:
 
@@ -17,14 +17,24 @@ It supports:
 
 ```bash
 mkdir -p ~/.codex/skills
-git clone https://github.com/yuanyuanyuan430/summer-family-travel-guide.git ~/.codex/skills/summer-family-travel-guide
+git clone https://github.com/yuanyuanyuan430/ganhuo-travel-lock.git ~/.codex/skills/ganhuo-travel-lock
 ```
 
 ## Default Prompt
 
 ```text
-使用 $summer-family-travel-guide 实时核验票价、酒店和交通，并锁定一份中文旅行方案。
+使用 $ganhuo-travel-lock 实时核验票价、酒店和交通，并锁定一份中文旅行方案。
 ```
+
+## Suggested Pricing
+
+Recommended commercial packaging:
+
+- 单次锁定版: ¥99 per trip. For users who already picked a destination and need hotel, transport, ticket, route, and checkout checklist lock-in.
+- 亲子/毕业深度版: ¥199 per trip. For family trips, graduation trips, multi-person preferences, budget comparison, attraction filtering, and final lock version.
+- 小团队顾问版: ¥699 per group. For 4-10 person groups, company outings, complex multi-city plans, backup options, and pre-departure recheck lists.
+
+Use outcome language such as "提高决策效率和踩坑规避能力". Do not promise lowest prices, guaranteed tickets, or guaranteed savings.
 
 ## Main Workflow
 
@@ -69,11 +79,11 @@ The skill must not:
 - `references/travel-guide-template.md`: Output template, city tiers, child-age rules, summer risks, Xiaohongshu angle.
 - `references/booking-lockin-workflow.md`: Lock state, booking readiness, decision log, and safety boundary.
 - `references/price-verification-workflow.md`: Source priority, evidence fields, normalization, comparison language.
-- `scripts/check_super_travel_skill.py`: Minimal regression self-check for required contract text.
+- `scripts/check_ganhuo_travel_lock.py`: Minimal regression self-check for required contract text.
 
 ## Validation
 
 ```bash
 python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py .
-python3 scripts/check_super_travel_skill.py
+python3 scripts/check_ganhuo_travel_lock.py
 ```

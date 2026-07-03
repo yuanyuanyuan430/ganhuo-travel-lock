@@ -1,5 +1,5 @@
 {
-  "name": "summer-family-travel-guide",
+  "name": "ganhuo-travel-lock",
   "version": "1.0.0",
   "description": "Chinese-first Codex Skill for summer family trips, graduation travel, live price verification, and itinerary lock-in.",
   "entry": "SKILL.md",
@@ -9,7 +9,7 @@
     "references/booking-lockin-workflow.md",
     "references/price-verification-workflow.md",
     "references/travel-guide-template.md",
-    "scripts/check_super_travel_skill.py",
+    "scripts/check_ganhuo_travel_lock.py",
     "README.md",
     "llms.txt",
     "llms-full.txt",

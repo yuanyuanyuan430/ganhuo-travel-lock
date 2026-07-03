@@ -1,8 +1,8 @@
-# Summer Family Travel Guide
+# Ganhuo Travel Lock
 
 Chinese-first Codex Skill for practical summer travel, family trips, graduation trips, live price verification, hotel/transport/ticket comparison, and conversational itinerary lock-in.
 
-Repository: https://github.com/yuanyuanyuan430/summer-family-travel-guide
+Repository: https://github.com/yuanyuanyuan430/ganhuo-travel-lock
 
 Core files:
 
@@ -10,7 +10,7 @@ Core files:
 - [Booking lock-in workflow](references/booking-lockin-workflow.md)
 - [Price verification workflow](references/price-verification-workflow.md)
 - [Travel guide template](references/travel-guide-template.md)
-- [Self-check script](scripts/check_super_travel_skill.py)
+- [Self-check script](scripts/check_ganhuo_travel_lock.py)
 
 Use this skill when the user asks in Chinese about:
 

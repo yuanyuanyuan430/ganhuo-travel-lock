@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Tiny self-check for the travel super-skill contract."""
+"""Tiny self-check for the Ganhuo Travel Lock skill contract."""
 
 from pathlib import Path
 
@@ -40,7 +40,7 @@ def main():
         "未定目的地时只给 3 个差异化方案",
         "不写未经核验的票价",
     ])
-    print("super travel skill self-check ok")
+    print("ganhuo travel lock self-check ok")
 
 
 if __name__ == "__main__":

@@ -1,8 +1,4 @@
-# Summer Family Travel Guide
-
-![Codex Skill](https://img.shields.io/badge/Codex-Skill-111827)
-![Chinese First](https://img.shields.io/badge/Chinese--first-旅行攻略-16a34a)
-![Safety](https://img.shields.io/badge/booking-human%20confirmed-f97316)
+# Ganhuo Travel Lock
 
 中文优先的旅行锁定与比价攻略 Skill：让 Codex 在对话里帮你把暑假亲子游、毕业旅行、城市路线、门票、酒店、交通和预算一步步收敛成可执行方案。
 
@@ -21,17 +17,29 @@
 | 锁定行程 | `已锁定 / 建议锁定 / 待确认 / 待核验 / 备选` 状态表 |
 | 小红书攻略 | 标题、封面信息、正文结构和避坑清单 |
 
+## 建议售价
+
+这不是普通攻略模板，卖点是“带实时核验的行程锁定”。建议按交付深度定价：
+
+| 套餐 | 建议价 | 适合谁 | 交付 |
+|---|---:|---|---|
+| 单次锁定版 | ¥99/次 | 已有目的地，只需要把酒店、交通、门票和路线定下来 | 旅行锁定卡、实时核验证据表、订前清单 |
+| 亲子/毕业深度版 | ¥199/次 | 带娃、毕业旅行、多人预算和偏好多 | 3 方案对比、每日行程、热门点取舍、预算、避坑、锁定版本 |
+| 小团队顾问版 | ¥699/团 | 4-10 人小团、公司团建、复杂跨城路线 | 多轮调整、订前决策支持、备选预案、出发前复核清单 |
+
+对外表述用“提高决策效率和踩坑规避能力”，不要承诺最低价、抢到票或保证省钱。
+
 ## 安装
 
 ```bash
 mkdir -p ~/.codex/skills
-git clone https://github.com/yuanyuanyuan430/summer-family-travel-guide.git ~/.codex/skills/summer-family-travel-guide
+git clone https://github.com/yuanyuanyuan430/ganhuo-travel-lock.git ~/.codex/skills/ganhuo-travel-lock
 ```
 
 重启 Codex 后，使用：
 
 ```text
-使用 $summer-family-travel-guide 实时核验票价、酒店和交通，并锁定一份中文旅行方案。
+使用 $ganhuo-travel-lock 实时核验票价、酒店和交通，并锁定一份中文旅行方案。
 ```
 
 ## 示例提示
@@ -70,7 +78,7 @@ git clone https://github.com/yuanyuanyuan430/summer-family-travel-guide.git ~/.c
 │   ├── booking-lockin-workflow.md
 │   ├── price-verification-workflow.md
 │   └── travel-guide-template.md
-├── scripts/check_super_travel_skill.py
+├── scripts/check_ganhuo_travel_lock.py
 ├── llms.txt
 ├── llms-full.txt
 └── PROMPTS.md
@@ -80,14 +88,14 @@ git clone https://github.com/yuanyuanyuan430/summer-family-travel-guide.git ~/.c
 
 ```bash
 python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py .
-python3 scripts/check_super_travel_skill.py
+python3 scripts/check_ganhuo_travel_lock.py
 ```
 
 预期输出：
 
 ```text
 Skill is valid!
-super travel skill self-check ok
+ganhuo travel lock self-check ok
 ```
 
 ## 设计取舍
