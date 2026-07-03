@@ -1,11 +1,10 @@
 {
   "name": "ganhuo-travel-lock",
   "version": "1.0.0",
-  "description": "Chinese-first Codex Skill for summer family trips, graduation travel, live price verification, and itinerary lock-in.",
+  "description": "Chinese-first Claude/Agent Skill for summer family trips, graduation travel, live price verification, and itinerary lock-in.",
   "entry": "SKILL.md",
   "files": [
     "SKILL.md",
-    "agents/openai.yaml",
     "references/booking-lockin-workflow.md",
     "references/price-verification-workflow.md",
     "references/travel-guide-template.md",
@@ -16,7 +15,8 @@
     "PROMPTS.md"
   ],
   "keywords": [
-    "codex-skill",
+    "claude-skill",
+    "agent-skill",
     "travel",
     "family-travel",
     "china-travel",

@@ -1,6 +1,6 @@
 # Ganhuo Travel Lock
 
-Chinese-first Codex Skill for practical summer travel, family trips, graduation trips, live price verification, hotel/transport/ticket comparison, and conversational itinerary lock-in.
+Chinese-first Claude/Agent Skill for practical summer travel, family trips, graduation trips, live price verification, hotel/transport/ticket comparison, and conversational itinerary lock-in.
 
 Repository: https://github.com/yuanyuanyuan430/ganhuo-travel-lock
 
@@ -26,11 +26,3 @@ Use this skill when the user asks in Chinese about:
 - 高铁/机票班次
 - 门票预约
 - 锁定行程
-
-Important boundaries:
-
-- Do not fabricate real-time prices, opening hours, availability, schedules, reservation slots, or queue times.
-- Do not auto-submit orders or payments.
-- Do not store credentials, identity documents, payment details, cookies, or verification codes.
-- Do not bypass captchas, queues, anti-bot systems, login walls, or rate limits.
-- Stop before paid or irreversible actions and require explicit user confirmation.

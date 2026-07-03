@@ -1,6 +1,6 @@
 # Ganhuo Travel Lock
 
-Ganhuo Travel Lock is a Chinese-first Codex Skill for turning travel ideas into executable, evidence-backed travel decisions and lock-in plans.
+Ganhuo Travel Lock is a Chinese-first Claude/Agent Skill for turning travel ideas into executable, evidence-backed travel decisions and lock-in plans.
 
 It supports:
 
@@ -13,12 +13,9 @@ It supports:
 - Booking lock-in state: `已锁定`, `建议锁定`, `待确认`, `待核验`, `备选`, `不建议锁定`.
 - Optional Xiaohongshu-friendly travel article structure when the user asks for it.
 
-## Installation
+## Use In Ganhuo
 
-```bash
-mkdir -p ~/.codex/skills
-git clone https://github.com/yuanyuanyuan430/ganhuo-travel-lock.git ~/.codex/skills/ganhuo-travel-lock
-```
+Use this repository as a standard Claude/Agent Skills directory named `ganhuo-travel-lock`.
 
 ## Default Prompt
 
@@ -59,23 +56,9 @@ For live facts, capture:
 - `confidence`
 - `next_action`
 
-## Safety Rules
-
-The skill can compare prices and policies, prepare decision tables, and help users reach a manual checkout decision.
-
-The skill must not:
-
-- Auto-submit orders.
-- Pay.
-- Store credentials, cookies, identity numbers, payment details, SMS codes, or tokens.
-- Bypass captchas, queues, anti-bot checks, rate limits, login walls, or platform terms.
-- Run high-frequency scraping, ticket sniping, resale/scalping workflows, or stealth automation.
-- Claim live price, stock, seat, room, or reservation availability without a current source.
-
 ## Files
 
 - `SKILL.md`: Triggering metadata, main workflow, boundaries, and references.
-- `agents/openai.yaml`: UI metadata for Codex.
 - `references/travel-guide-template.md`: Output template, city tiers, child-age rules, summer risks, Xiaohongshu angle.
 - `references/booking-lockin-workflow.md`: Lock state, booking readiness, decision log, and safety boundary.
 - `references/price-verification-workflow.md`: Source priority, evidence fields, normalization, comparison language.
@@ -84,6 +67,5 @@ The skill must not:
 ## Validation
 
 ```bash
-python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py .
 python3 scripts/check_ganhuo_travel_lock.py
 ```

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Tiny self-check for the Ganhuo Travel Lock skill contract."""
 
+import re
 from pathlib import Path
 
 
@@ -14,7 +15,23 @@ def must_contain(path, needles):
         raise SystemExit(f"{path} missing: {', '.join(missing)}")
 
 
+def check_skill_frontmatter():
+    text = (ROOT / "SKILL.md").read_text(encoding="utf-8")
+    match = re.match(r"^---\n(?P<body>.*?)\n---\n", text, re.S)
+    if not match:
+        raise SystemExit("SKILL.md missing YAML frontmatter")
+
+    body = match.group("body")
+    fields = dict(re.findall(r"^([a-z-]+):\s*(.+)$", body, re.M))
+    if fields.get("name") != "ganhuo-travel-lock":
+        raise SystemExit("SKILL.md name must be ganhuo-travel-lock")
+    description = fields.get("description", "")
+    if not description or len(description) > 1024:
+        raise SystemExit("SKILL.md description must be 1-1024 characters")
+
+
 def main():
+    check_skill_frontmatter()
     must_contain("SKILL.md", [
         "booking-lockin-workflow.md",
         "price-verification-workflow.md",

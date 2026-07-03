@@ -1,6 +1,6 @@
 # Ganhuo Travel Lock
 
-中文优先的旅行决策与锁定 Skill：让 Codex 在对话里帮你把暑假亲子游、毕业旅行、城市路线、门票、酒店、交通和预算一步步收敛成可执行方案。
+中文优先的旅行决策与锁定 Skill：让干活里的智能体在对话里帮你把暑假亲子游、毕业旅行、城市路线、门票、酒店、交通和预算一步步收敛成可执行方案。
 
 它不是抢票器，也不是自动付款机器人。它做的是：实时核验、证据留痕、方案取舍、风险提示、锁定版本和人工确认清单。
 
@@ -29,14 +29,9 @@
 
 对外表述用“提高决策效率和踩坑规避能力”，不要承诺最低价、抢到票或保证省钱。
 
-## 安装
+## 使用方式
 
-```bash
-mkdir -p ~/.codex/skills
-git clone https://github.com/yuanyuanyuan430/ganhuo-travel-lock.git ~/.codex/skills/ganhuo-travel-lock
-```
-
-重启 Codex 后，使用：
+把本仓库作为标准 Claude/Agent Skills 目录使用，目录名保持为 `ganhuo-travel-lock`。在干活里调用时，直接让智能体使用 `ganhuo-travel-lock` 处理旅行决策、实时核验和订前锁定任务。
 
 ```text
 使用 $ganhuo-travel-lock 实时核验票价、酒店和交通，并锁定一份中文旅行方案。
@@ -60,20 +55,11 @@ git clone https://github.com/yuanyuanyuan430/ganhuo-travel-lock.git ~/.codex/ski
 给我写一篇青岛亲子游小红书攻略，要热门地点排序、预算、避坑和出发前核验清单。
 ```
 
-## 安全边界
-
-- 不编造实时票价、库存、开放时间、预约名额、班次、排队时间。
-- 不自动提交订单、不支付、不保存账号密码、验证码、身份证、支付信息、cookies。
-- 不绕过验证码、排队系统、平台限流、登录墙、反爬机制。
-- 不做高频抓价、抢票、黄牛、转售或隐身自动化。
-- 任何付费或不可逆动作，都停在用户亲自确认之前。
-
 ## 文件结构
 
 ```text
 .
 ├── SKILL.md
-├── agents/openai.yaml
 ├── references/
 │   ├── booking-lockin-workflow.md
 │   ├── price-verification-workflow.md
@@ -87,17 +73,11 @@ git clone https://github.com/yuanyuanyuan430/ganhuo-travel-lock.git ~/.codex/ski
 ## 验证
 
 ```bash
-python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py .
 python3 scripts/check_ganhuo_travel_lock.py
 ```
 
 预期输出：
 
 ```text
-Skill is valid!
 ganhuo travel lock self-check ok
 ```
-
-## 设计取舍
-
-这版把“订票爬价格”定义为低频、可追溯、公开来源的核验流程，而不是把平台 UI 自动化做成抢票系统。这样更适合日常旅行决策，也更安全、可维护。
