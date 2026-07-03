@@ -1,6 +1,6 @@
 # Ganhuo Travel Lock
 
-Ganhuo Travel Lock is a Chinese-first Codex Skill for turning travel ideas into executable, evidence-backed plans.
+Ganhuo Travel Lock is a Chinese-first Codex Skill for turning travel ideas into executable, evidence-backed travel decisions and lock-in plans.
 
 It supports:
 
@@ -11,7 +11,7 @@ It supports:
 - Budget estimates separated from live verified prices.
 - Live verification workflows for tickets, opening hours, reservations, hotel prices, transport schedules, weather warnings, and cancellation policies.
 - Booking lock-in state: `已锁定`, `建议锁定`, `待确认`, `待核验`, `备选`, `不建议锁定`.
-- Xiaohongshu-style travel article structure.
+- Optional Xiaohongshu-friendly travel article structure when the user asks for it.
 
 ## Installation
 

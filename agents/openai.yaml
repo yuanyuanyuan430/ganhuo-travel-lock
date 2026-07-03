@@ -1,4 +1,4 @@
 interface:
-  display_name: "旅行锁定与比价攻略"
+  display_name: "旅行决策与锁定"
   short_description: "实时核验票价酒店交通并锁定亲子毕业旅行完整执行方案"
   default_prompt: "使用 $ganhuo-travel-lock 实时核验票价、酒店和交通，并锁定一份中文旅行方案。"

@@ -1,6 +1,6 @@
 ---
 name: ganhuo-travel-lock
-description: Chinese-first travel planning and booking-lock workflow for summer vacation, graduation trips, family trips with children, city recommendations, live ticket/transport/hotel price verification, itinerary lock-in, popular attraction filtering, budgets, pitfalls, and Xiaohongshu-style travel content. Use when the user asks for 旅游攻略, 暑假去哪, 毕业旅行, 带娃旅游, 亲子游, 城市推荐, 热门地点避坑, 小红书旅行攻略, 订票, 查票价, 比价, 酒店价格, 高铁/机票班次, 门票预约, 锁定行程, or similar China-focused trip planning.
+description: Chinese-first travel planning and booking-lock workflow for summer vacation, graduation trips, family trips with children, city recommendations, live ticket/transport/hotel price verification, itinerary lock-in, popular attraction filtering, budgets, pitfalls, and optional Xiaohongshu-style outputs. Use when the user asks for 旅游攻略, 暑假去哪, 毕业旅行, 带娃旅游, 亲子游, 城市推荐, 热门地点避坑, 小红书旅行攻略, 订票, 查票价, 比价, 酒店价格, 高铁/机票班次, 门票预约, 锁定行程, or similar China-focused trip planning.
 ---
 
 # Ganhuo Travel Lock
